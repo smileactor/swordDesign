@@ -19,7 +19,7 @@ public class ActorController : IActorManagerInterface
     void Start()
     {
         pi = GetComponent<PlayerInput>();
-        touch = GameManager.Instance.InsMoveUI().GetComponentInChildren<MoveUI>();
+        touch = GameManager.InsMoveUI().GetComponentInChildren<MoveUI>();
     }
 
     // Update is called once per frame
@@ -72,7 +72,6 @@ public class ActorController : IActorManagerInterface
         Vector3 moveDirection = new Vector3(touch.Horizontal, 0, touch.Vertical);
         if (moveDirection != Vector3.zero)
         {
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * rotSpeed);
             transform.rotation = Quaternion.LookRotation(moveDirection);
             transform.Translate(Vector3.forward * Time.deltaTime * Speed);
         }

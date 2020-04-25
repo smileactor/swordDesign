@@ -121,7 +121,7 @@ namespace Com.MyCompany.MyGame
         #endregion
 
         
-        public GameObject InsMoveUI()
+        public static GameObject InsMoveUI()
         {
             return GameObject.Instantiate(Resources.Load("Prefabs/moveCanvas")) as GameObject;
         }
